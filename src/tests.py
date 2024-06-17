@@ -9,32 +9,45 @@ class TestTaskService(unittest.TestCase):
         """Test the add_task method of TaskService."""
         # Arrange
         task_service = TaskService()
-        initial_task_count = len(task_service.get_all_tasks())  # Get initial task count
-        new_task = Task(task_id=1, title="First Task", description="OOP Classes")
+
+        # Get initial task count
+        initial_task_count = len(task_service.get_all_tasks())
+        new_task = Task(task_id=1,
+                        title="First Task",
+                        description="OOP Classes")
         # Act
         task_service.add_task(new_task)
-        # Assert
-        updated_task_count = len(task_service.get_all_tasks())  # Get updated task count
-        self.assertEqual(updated_task_count, initial_task_count + 1) # Check if the task count increased by 1
+
+        # Get updated task count
+        updated_task_count = len(task_service.get_all_tasks())
+        # Check if the task count increased by 1
+        self.assertEqual(updated_task_count, initial_task_count + 1)
         task_service.display_tasks()
-        self.assertIn(new_task, task_service.get_all_tasks())  # Check that the newly created task is there
+        # Check that the newly created task is there
+        self.assertIn(new_task, task_service.get_all_tasks())
 
     def test_remove_task(self):
         """Test the add_task method of TaskService."""
         # Arrange
         task_service = TaskService()
-        initial_task_count = len(task_service.get_all_tasks())  # Get initial task count
-        new_task = Task(task_id=2, title="Second Task", description="OOP Class Tests")
+        # Get initial task count
+        initial_task_count = len(task_service.get_all_tasks())
+        new_task = Task(task_id=2,
+                        title="Second Task",
+                        description="OOP Class Tests")
         # Act
         task_service.add_task(new_task)
-        # Assert
-        updated_task_count = len(task_service.get_all_tasks())  # Get updated task count
-        self.assertEqual(updated_task_count, initial_task_count + 1) # Check if the task count increased by 1
+        # Get updated task count
+        updated_task_count = len(task_service.get_all_tasks())
+        # Check if the task count increased by 1
+        self.assertEqual(updated_task_count, initial_task_count + 1)
         task_service.display_tasks()
         task_service.remove_task(new_task)
-        self.assertNotIn(new_task, task_service.get_all_tasks())  # Check that the newly created task is there
-          
-    
-   
+        # Check that the newly created task is NOT there
+        self.assertNotIn(new_task, task_service.get_all_tasks())
+        # Check if the task count decreased by 1
+        self.assertEqual(updated_task_count, initial_task_count)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -7,7 +7,7 @@ class TaskService:
     def __init__(self):
         """ Initialise the TaskService with a TaskRepository."""
         self.task_repository = TaskRepository()
-    
+
     def get_all_tasks(self):
         """ Get all tasks from the data source."""
         return self.task_repository.get_all_tasks()

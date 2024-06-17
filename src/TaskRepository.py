@@ -1,7 +1,3 @@
-from task import Task
-
-
-# data_access.py
 class TaskRepository:
 
     def __init__(self):
@@ -11,12 +7,8 @@ class TaskRepository:
         self.tasks[task.task_id] = task
         print(f"Task added: {task.description}.")
 
-    def get_all_tasks(self):
-        return self.tasks.values()
-
-    def remove_task(self, task):
-        task_id = task.task_id
-        if task.task_id in self.tasks.keys():
+    def remove_task(self, task_id):
+        if task_id in self.tasks:
             del self.tasks[task_id]
             print(f"Task with ID {task_id} removed.")
         else:
@@ -28,17 +20,9 @@ class TaskRepository:
             task.display_task_details()
 
     def mark_task_as_complete(self, task_id):
-        if task_id in self.tasks.keys:
+        if task_id in self.tasks:
             self.tasks[task_id].complete_task()
             print(f"Task with ID {task_id} marked as complete.")
-        else:
-            print(f"Task with ID {task_id} not found.")
-
-    def get_task(self, task_id):
-        """ Read and display information for a task based on its ID. """
-        if task_id in self.tasks.keys():
-            print(f"Task with ID {task_id} marked as complete.")
-            return self.tasks[task_id]
         else:
             print(f"Task with ID {task_id} not found.")
 
@@ -46,10 +30,10 @@ class TaskRepository:
         """ Read and display information for a task based on its ID. """
         for task in self.tasks:
             if task.task_id == task_id:
-                t_id = task.task_id
                 title = task.title
                 text = task.description
-                print(f"Found- ID: {t_id}, Title: {title}, Descr: {text}\n")
+                print(f"Found - ID: {task_id}, Title: {title}, Descr: {text}")
+                print()
                 return
         print(f"Task with ID {task_id} not found.\n")
 
@@ -71,11 +55,3 @@ class TaskRepository:
                 print("Task deleted successfully!")
                 return
         print(f"Task with ID {task_id} not found.")
-
-
-# Sample data
-tasks_data = [
-    Task(1, "Task 1", "Description for Task 1"),
-    Task(2, "Task 2", "Description for Task 2"),
-    Task(3, "Task 3", "Description for Task 3"),
-]

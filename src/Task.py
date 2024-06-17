@@ -14,23 +14,36 @@ class Task:
     is_graded = False
     grade = 0
 
+
     # Method to change 'has_been_completed' task from False to True.
     def mark_as_complete(self) :
         self.has_been_completed = True
 
+
     # Method to change 'has_been_completed' emails from True to False.
     def mark_as_incomplete(self) :
         self.has_been_completed = False
+
 
     # Method to change 'is_graded' task from False to True.
     def set_grade(self, grade) :
         self.grade = grade
         self.is_graded = True
 
-    # Method to change 'has_been_completed' and 'is_graded' task from True to False.
+
+    # Method to change 'has_been_completed' to True and 'is_graded' task to False.
     def submit(self) :
-        self.has_been_completed = False
+        self.has_been_completed = True
         self.is_graded = False
+
+
+    # Method to see if Task has passed 
+    def hasPassed(self) :
+        if self.grade > 80
+            return True
+        else
+            return False
+
 
 # Sample data
 tasks_data = [

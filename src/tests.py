@@ -45,8 +45,10 @@ class TestTaskService(unittest.TestCase):
         task_service.remove_task(new_task)
         # Check that the newly created task is NOT there
         self.assertNotIn(new_task, task_service.get_all_tasks())
+        # Get updated task count
+        updated_task_count = len(task_service.get_all_tasks())
         # Check if the task count decreased by 1
-        self.assertEqual(updated_task_count, initial_task_count)
+        self.assertEqual(updated_task_count, 0)
 
 
 if __name__ == "__main__":

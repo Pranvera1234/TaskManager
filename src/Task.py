@@ -21,6 +21,11 @@ class Task:
     def mark_as_incomplete(self):
         self.has_been_completed = False
 
+    # Method to display task details
+    def display_task_details(self):
+        status = "Completed" if self.has_been_completed else "Not Completed"
+        print(f"Task ID: {self.task_id}, Description: {self.description}, Status: {status}")
+
     # Method to change 'is_graded' task from False to True.
     def set_grade(self, grade):
         self.grade = grade

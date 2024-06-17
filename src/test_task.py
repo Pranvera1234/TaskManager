@@ -12,12 +12,12 @@ class TestTask(unittest.TestCase):
     def test_mark_as_complete(self):
         # Test if mark_as_complete method sets mark_as_complete to True
         self.task.mark_as_complete()
-        self.assertEqual(self.task.mark_as_complete, True)
+        self.assertEqual(self.task.has_been_completed, True)
 
     def test_mark_as_incomplete(self):
         # Test if mark_as_incomplete method sets mark_as_complete to False
         self.task.mark_as_incomplete()
-        self.assertEqual(self.task.mark_as_incomplete, False)
+        self.assertEqual(self.task.has_been_completed, False)
 
     def test_set_grade_100(self):
         # Test if set_grade method correctly sets grade

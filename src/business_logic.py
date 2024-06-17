@@ -12,9 +12,9 @@ class TaskService:
         """ Get all tasks from the data source."""
         return self.task_repository.get_all_tasks()
 
-    def add_task(self, task):
+    def add_task(self, task_id, task_title, task_description):
         """ Add a new task to the data source."""
-        self.task_repository.add_task(task)
+        self.task_repository.add_task(task_id, task_title, task_description)
 
     def get_task(self, task):
         """ Get task from the data source."""
@@ -24,9 +24,9 @@ class TaskService:
         """ Get task from the data source."""
         self.task_repository.display_tasks()
 
-    def remove_task(self, task):
-        """ Get task from the data source."""
-        self.task_repository.remove_task(task)
+    def remove_task(self, task_id):
+        """ Remove task from the data source."""
+        self.task_repository.remove_task_withId(task_id)
 
 
 # Sample data

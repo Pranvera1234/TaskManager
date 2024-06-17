@@ -7,9 +7,13 @@ class TaskRepository:
     def __init__(self):
         self.tasks = {}
 
-    def add_task(self, task):
-        self.tasks[task.task_id] = task
-        print(f"Task added: {task.description}.")
+    def add_task(self, task_id, task_title, task_description):
+        if task_id in self.tasks.keys():
+            print("Task cannot be added, because this id exists.")
+        else:
+            task = Task(task_id, task_title, task_description)
+            self.tasks[task_id] = task
+            print(f"Task added: {task.description}.")
 
     def get_all_tasks(self):
         return self.tasks.values()
@@ -17,6 +21,13 @@ class TaskRepository:
     def remove_task(self, task):
         task_id = task.task_id
         if task.task_id in self.tasks.keys():
+            del self.tasks[task_id]
+            print(f"Task with ID {task_id} removed.")
+        else:
+            print(f"Task with ID {task_id} not found.")
+
+    def remove_task_withId(self, task_id):
+        if task_id in self.tasks.keys():
             del self.tasks[task_id]
             print(f"Task with ID {task_id} removed.")
         else:

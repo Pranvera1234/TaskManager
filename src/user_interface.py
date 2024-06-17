@@ -10,21 +10,24 @@ def start_application():
         print("Task Management Application")
         print("1. View Tasks")
         print("2. Add Task")
-        print("3. Quit")
+        print("3. Remove Task")
+        print("4. Quit")
 
         choice = input("Enter your choice: ")
 
         if choice == "1":
-
-            tasks = task_service.get_all_tasks()
             print("Tasks:")
-            for task in tasks:
-                print(f"- {task}")
+            task_service.display_tasks()
         elif choice == "2":
-            new_task = input("Enter task description: ")
-            task_service.add_task(new_task)
+            task_id = input("Enter task id: ")
+            task_title = input("Enter task title: ")
+            task_description = input("Enter task description: ")
+            task_service.add_task(task_id, task_title, task_description)
             print("Task added successfully!")
         elif choice == "3":
+            task_id = input("Enter task id: ")
+            task_service.remove_task(task_id)
+        elif choice == "4":
             print("Exiting the application. Goodbye!")
             break
         else:

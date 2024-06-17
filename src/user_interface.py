@@ -3,7 +3,7 @@ from business_logic import TaskService
 
 
 def start_application():
-    """ Start the Task Management Application."""
+    """Start the Task Management Application."""
     task_service = TaskService()
 
     while True:

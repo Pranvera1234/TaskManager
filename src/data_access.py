@@ -46,7 +46,7 @@ class TaskRepository:
             print(f"Task with ID {task_id} not found.")
 
     def get_task(self, task_id):
-        """ Read and display information for a task based on its ID. """
+        """Read and display information for a task based on its ID."""
         if task_id in self.tasks.keys():
             print(f"Task with ID {task_id} marked as complete.")
             return self.tasks[task_id]
@@ -54,7 +54,7 @@ class TaskRepository:
             print(f"Task with ID {task_id} not found.")
 
     def read_task(self, task_id):
-        """ Read and display information for a task based on its ID. """
+        """Read and display information for a task based on its ID."""
         for task in self.tasks:
             if task.task_id == task_id:
                 t_id = task.task_id
@@ -65,7 +65,7 @@ class TaskRepository:
         print(f"Task with ID {task_id} not found.\n")
 
     def update_task(self, task_id, new_title, new_description):
-        """ Update the title and description of a task based on its ID. """
+        """Update the title and description of a task based on its ID."""
         for task in self.tasks:
             if task.task_id == task_id:
                 task.title = new_title
@@ -75,7 +75,7 @@ class TaskRepository:
         print(f"Task with ID {task_id} not found.")
 
     def delete_task(self, task_id):
-        """ Delete a task based on its ID. """
+        """Delete a task based on its ID."""
         for i, task in enumerate(self.tasks):
             if task.task_id == task_id:
                 del self.tasks[i]

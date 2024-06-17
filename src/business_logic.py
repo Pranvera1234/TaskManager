@@ -5,27 +5,27 @@ from task import Task
 
 class TaskService:
     def __init__(self):
-        """ Initialise the TaskService with a TaskRepository."""
+        """Initialise the TaskService with a TaskRepository."""
         self.task_repository = TaskRepository()
 
     def get_all_tasks(self):
-        """ Get all tasks from the data source."""
+        """Get all tasks from the data source."""
         return self.task_repository.get_all_tasks()
 
     def add_task(self, task_id, task_title, task_description):
-        """ Add a new task to the data source."""
+        """Add a new task to the data source."""
         self.task_repository.add_task(task_id, task_title, task_description)
 
     def get_task(self, task):
-        """ Get task from the data source."""
+        """Get task from the data source."""
         self.task_repository.get_task(task.task_id)
 
     def display_tasks(self):
-        """ Get task from the data source."""
+        """Get task from the data source."""
         self.task_repository.display_tasks()
 
     def remove_task(self, task_id):
-        """ Remove task from the data source."""
+        """Remove task from the data source."""
         self.task_repository.remove_task_withId(task_id)
 
 

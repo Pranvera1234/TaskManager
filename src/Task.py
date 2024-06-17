@@ -1,5 +1,5 @@
 # --- Task Class --- #
-class Task:
+class Task():
     """Class representing a Task entity with attributes."""
 
     def __init__(self, task_id, title, description):

@@ -24,6 +24,10 @@ class TaskService:
         """ Get task from the data source."""
         self.task_repository.display_tasks()
 
+    def remove_task(self, task):
+        """ Get task from the data source."""
+        self.task_repository.remove_task(task)
+
 
 # Sample data
 tasks_data = [

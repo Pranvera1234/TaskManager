@@ -11,10 +11,11 @@ class TaskRepository:
         print(f"Task added: {task.description}.")
 
     def get_all_tasks(self):
-        return self.tasks
+        return self.tasks.values()
 
-    def remove_task(self, task_id):
-        if task_id in self.tasks:
+    def remove_task(self, task):
+        task_id = task.task_id
+        if task.task_id in self.tasks.keys():
             del self.tasks[task_id]
             print(f"Task with ID {task_id} removed.")
         else:
@@ -34,7 +35,7 @@ class TaskRepository:
 
     def get_task(self, task_id):
         """ Read and display information for a task based on its ID. """
-        if task_id in self.tasks.keys:
+        if task_id in self.tasks.keys():
             print(f"Task with ID {task_id} marked as complete.")
             return self.tasks[task_id]
         else:

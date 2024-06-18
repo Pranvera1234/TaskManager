@@ -7,7 +7,9 @@ def appendTask(task):
     # open the file with write access
     file = open(FILENAME, "a")
     # write the task
-    file.write(str(task.task_id) + "-" + task.title + "-" + task.description + "\n")
+    file.write(
+        str(task.task_id) + "-" + task.title + "-" + task.description + "\n"
+    )
     # close the file
     file.close()
 

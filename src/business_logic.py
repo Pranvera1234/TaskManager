@@ -21,7 +21,7 @@ class TaskService:
         self.task_repository.get_task(task.task_id)
 
     def display_tasks(self):
-        """Get task from the data source."""
+        """Display task from the data source."""
         self.task_repository.display_tasks()
 
     def remove_task(self, task_id):

@@ -34,9 +34,12 @@ class TaskRepository:
             print(f"Task with ID {task_id} not found.")
 
     def display_tasks(self):
-        print("Tasks in the to-do list:")
-        for task in self.tasks.values():
-            task.display_task_details()
+        if len(self.tasks) == 0:
+            print("There are no tasks. Please Add a task first.")
+        else:
+            print("Tasks in the to-do list:")
+            for task in self.tasks.values():
+                task.display_task_details()
 
     def mark_task_as_complete(self, task_id):
         if task_id in self.tasks.keys:

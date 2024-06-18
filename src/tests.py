@@ -12,9 +12,9 @@ class TestTaskService(unittest.TestCase):
 
         # Get initial task count
         initial_task_count = len(task_service.get_all_tasks())
-        new_task = Task(task_id=1,
-                        title="First Task",
-                        description="OOP Classes")
+        new_task = Task(
+            task_id=1, title="First Task", description="OOP Classes"
+        )
         # Act
         task_service.add_task(new_task)
 
@@ -32,9 +32,9 @@ class TestTaskService(unittest.TestCase):
         task_service = TaskService()
         # Get initial task count
         initial_task_count = len(task_service.get_all_tasks())
-        new_task = Task(task_id=2,
-                        title="Second Task",
-                        description="OOP Class Tests")
+        new_task = Task(
+            task_id=2, title="Second Task", description="OOP Class Tests"
+        )
         # Act
         task_service.add_task(new_task)
         # Get updated task count

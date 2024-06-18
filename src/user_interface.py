@@ -3,6 +3,7 @@ from business_logic import TaskService
 from task import Task
 
 
+# Method to start the user interface.
 def start_application():
     """Start the Task Management Application."""
     task_service = TaskService()

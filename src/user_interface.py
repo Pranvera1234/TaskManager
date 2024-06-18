@@ -21,7 +21,7 @@ def start_application():
             print("Tasks:")
             task_service.display_tasks()
         elif choice == "2":
-            task_id = input("Enter task id: ")
+            task_id = int(input("Enter task id: "))
             task_title = input("Enter task title: ")
             task_description = input("Enter task description: ")
             task = Task(task_id, task_title, task_description)

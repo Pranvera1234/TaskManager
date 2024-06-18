@@ -1,4 +1,5 @@
 from task import Task
+from utilities import readTasks, appendTask, rewriteTasks
 
 
 # data_access.py
@@ -6,7 +7,7 @@ class TaskRepository:
 
     # Initialise method with empty tasks.
     def __init__(self):
-        self.tasks = {}
+        self.tasks = readTasks()
 
     # Method to add a task.
     def add_task(self, task):
@@ -14,6 +15,7 @@ class TaskRepository:
             print("Task cannot be added, because this id exists.")
         else:
             self.tasks[task.task_id] = task
+            appendTask(task)
             print(f"Task added: {task.description}.")
 
     # Method to get all tasks.
@@ -33,6 +35,7 @@ class TaskRepository:
     def remove_task_withId(self, task_id):
         if task_id in self.tasks.keys():
             del self.tasks[task_id]
+            rewriteTasks(self.tasks.values())
             print(f"Task with ID {task_id} removed.")
         else:
             print(f"Task with ID {task_id} not found.")

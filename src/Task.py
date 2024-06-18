@@ -2,6 +2,7 @@
 class Task:
     """Class representing a Task entity with attributes."""
 
+    # Initialise method for a new Task.
     def __init__(self, task_id, title, description):
         """Initialize a new Task instance."""
         self.task_id = task_id

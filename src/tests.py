@@ -25,6 +25,8 @@ class TestTaskService(unittest.TestCase):
         task_service.display_tasks()
         # Check that the newly created task is there
         self.assertIn(new_task, task_service.get_all_tasks())
+        # clean up
+        task_service.remove_task(new_task.task_id)
 
     def test_remove_task(self):
         """Test the remove_task method of TaskService."""

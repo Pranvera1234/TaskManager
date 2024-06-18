@@ -7,12 +7,11 @@ class TaskRepository:
     def __init__(self):
         self.tasks = {}
 
-    def add_task(self, task_id, task_title, task_description):
-        if task_id in self.tasks.keys():
+    def add_task(self, task):
+        if task.task_id in self.tasks.keys():
             print("Task cannot be added, because this id exists.")
         else:
-            task = Task(task_id, task_title, task_description)
-            self.tasks[task_id] = task
+            self.tasks[task.task_id] = task
             print(f"Task added: {task.description}.")
 
     def get_all_tasks(self):

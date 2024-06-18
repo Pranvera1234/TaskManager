@@ -12,9 +12,9 @@ class TaskService:
         """Get all tasks from the data source."""
         return self.task_repository.get_all_tasks()
 
-    def add_task(self, task_id, task_title, task_description):
+    def add_task(self, task):
         """Add a new task to the data source."""
-        self.task_repository.add_task(task_id, task_title, task_description)
+        self.task_repository.add_task(task)
 
     def get_task(self, task):
         """Get task from the data source."""

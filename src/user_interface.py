@@ -1,5 +1,6 @@
 # user_interface.py
 from business_logic import TaskService
+from task import Task
 
 
 def start_application():
@@ -22,7 +23,8 @@ def start_application():
             task_id = input("Enter task id: ")
             task_title = input("Enter task title: ")
             task_description = input("Enter task description: ")
-            task_service.add_task(task_id, task_title, task_description)
+            task = Task(task_id, task_title, task_description)
+            task_service.add_task(task)
             print("Task added successfully!")
         elif choice == "3":
             task_id = input("Enter task id: ")
